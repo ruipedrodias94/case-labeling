@@ -1,0 +1,26 @@
+version: "2"
+
+services:
+  api:
+    build:
+      dockerfile: Dockerfile
+    command: npm run start.api.dev
+    volumes:
+      - ./services/:/services/
+      - /services/node_modules
+    ports:
+      - "3000:3000"
+
+  # web-app:
+  #   build:
+  #     dockerfile: Dockerfile.local
+  #   volumes:
+  #     - ./www/:/www/
+  #     - /www/node_modules
+  #   environment:
+  #     - NODE_ENV=development
+  #     - PORT=3000
+  #   ports:
+  #     - 80:3000
+  #   depends_on:
+  #     - api
