@@ -12,7 +12,7 @@ exports.register = async (req, res, next) => {
     const savedUser = await registerUser(email, password, name);
 
     if (savedUser) {
-      res.status(httpStatus.OK);
+      res.status(httpStatus.CREATED);
       return res.json({ registerUser: true, user: savedUser });
     }
   } catch (error) {
@@ -35,7 +35,7 @@ exports.login = async (req, res, next) => {
     res.cookie("jwtToken", token, { httpOnly: false, maxAge: 10000000000 });
 
     logger.info("User logged in");
-
+    res.status(httpStatus.OK);
     return res.json({ login: true, token: token });
   } catch (error) {
     logger.error(JSON.stringify({ errorMessage: error.message, errorCode: error.code, errorName: error.name }));
