@@ -5,7 +5,7 @@
   "scripts": {
     "start.api": "node api/api.js",
     "start.api.dev": "nodemon -L api/api.js",
-    "jest.api.test": "jest --config api/jest_config.js --runInBand"
+    "test": " mocha 'api/tests/**/*.js' --recursive --timeout 60000 --exit"
   },
   "keywords": [],
   "author": "Bitcliq",
@@ -17,6 +17,7 @@
     "jimp": "0.16.1",
     "express": "^4.17.1",
     "cookie-parser": "1.4.5",
+    "cross-env": "7.0.3",
     "winston": "3.3.3",
     "jsonwebtoken": "8.5.1",
     "tedious": "11.0.3",
@@ -38,7 +39,17 @@
     "semserver": "1.0.0"
   },
   "devDependencies": {
-    "nodemon": "2.0.7"
+    "nodemon": "2.0.7",
+    "chai": "4.3.4",
+    "chai-as-promised": "7.1.1",
+    "coveralls": "3.1.0",
+    "husky": "6.0.0",
+    "mocha": "8.3.2",
+    "nyc": "15.1.0",
+    "opn-cli": "5.0.0",
+    "sinon": "10.0.0",
+    "sinon-chai": "3.6.0",
+    "supertest": "6.1.3"
   },
   "description": "",
   "prettier": {
