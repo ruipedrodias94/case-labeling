@@ -18,6 +18,7 @@
     "express": "^4.17.1",
     "cookie-parser": "1.4.5",
     "cross-env": "7.0.3",
+    "csv-parser": "3.0.0",
     "winston": "3.3.3",
     "jsonwebtoken": "8.5.1",
     "tedious": "11.0.3",
