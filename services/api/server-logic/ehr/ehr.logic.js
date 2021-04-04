@@ -3,7 +3,7 @@ const { EHR } = require("../../models/ehr.model");
 
 exports.label = async (id, doctorId, labelId) => {
   try {
-    const ehr = await EHR.findByIdAndUpdate(id, { doctorId: doctorId, labelId: labelId });
+    const ehr = await EHR.findByIdAndUpdate(id, { doctorId: doctorId, labelId: labelId, labeledAt: new Date() });
 
     await ehr.save();
 
