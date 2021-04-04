@@ -11,16 +11,16 @@ services:
     ports:
       - "3000:3000"
 
-  # web-app:
-  #   build:
-  #     dockerfile: Dockerfile.local
-  #   volumes:
-  #     - ./www/:/www/
-  #     - /www/node_modules
-  #   environment:
-  #     - NODE_ENV=development
-  #     - PORT=3000
-  #   ports:
-  #     - 80:3000
-  #   depends_on:
-  #     - api
+  web-app:
+    build:
+      dockerfile: Dockerfile.local
+    volumes:
+      - ./www/:/www/
+      - /www/node_modules
+    environment:
+      - NODE_ENV=development
+      - PORT=4000
+    ports:
+      - 80:4000
+    depends_on:
+      - api
