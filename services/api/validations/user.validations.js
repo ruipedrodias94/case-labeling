@@ -15,4 +15,10 @@ const login = {
   }),
 };
 
-module.exports = { register, login };
+const deleteUser = {
+  body: Joi.object({
+    email: Joi.string().required(),
+  }),
+};
+
+module.exports = { register, login, deleteUser };

@@ -5,7 +5,7 @@
   "scripts": {
     "start.api": "node api/api.js",
     "start.api.dev": "nodemon -L api/api.js",
-    "test": " mocha 'api/tests/**/*.js' --recursive --timeout 60000 --exit"
+    "test": "jest --config api/jest_config.js --runInBand --detectOpenHandles --forceExit"
   },
   "keywords": [],
   "author": "Bitcliq",
