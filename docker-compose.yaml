@@ -6,8 +6,8 @@ services:
     build:
       context: services/.
 
-  #web-app:
-  #container_name: webapp
-  #stdin_open: true
-  #build:
-  #context: www/.
+  web-app:
+    container_name: webApp
+    stdin_open: true
+    build:
+      context: www/.
