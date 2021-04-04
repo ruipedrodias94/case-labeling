@@ -6,7 +6,9 @@ const mongoose = require("./config/mongoose");
 
 mongoose.connect();
 
-app.listen(port, () => logger.info(`Server started on port ${port} (${env})`));
+if (process.env.NODE_ENV !== "test") {
+  app.listen(port, () => logger.info(`Server started on port ${port} (${env})`));
+}
 
 /**
  * Exports express

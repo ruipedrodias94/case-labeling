@@ -60,3 +60,16 @@ exports.logout = async (req, res, next) => {
     return next(error);
   }
 };
+
+exports.deleteUser = async (req, res, next) => {
+  try {
+    const email = req.body.email;
+
+    const user = await User.findByIdAndDelete({ email: email });
+
+    return res.json({ userDeleted: true, user: user });
+  } catch (error) {
+    logger.error(JSON.stringify({ errorMessage: error.message, errorCode: error.code, errorName: error.name }));
+    return next(error);
+  }
+};
